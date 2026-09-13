@@ -177,7 +177,13 @@ export const AdminLayout: React.FC = () => {
                 width={240}
                 theme={isDarkMode ? "dark" : "light"}
                 className="!fixed left-0 top-0 bottom-0 h-screen border-r border-slate-200 dark:border-slate-800 shadow-xs z-20 flex flex-col justify-between"
-                style={{ position: "fixed", left: 0, top: 0, bottom: 0, height: "100vh" }}
+                style={{
+                    position: "fixed",
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    height: "100vh",
+                }}
             >
                 <div className="flex flex-col flex-1 overflow-hidden">
                     <div className="h-16 shrink-0 flex items-center justify-between px-4 border-b border-slate-200 dark:border-slate-800">
@@ -210,11 +216,13 @@ export const AdminLayout: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="p-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-center shrink-0 bg-white dark:bg-slate-900">
+                <div
+                    onClick={() => setCollapsed(!collapsed)}
+                    className="p-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-center shrink-0 bg-white dark:bg-slate-900"
+                >
                     <Button
                         type="text"
                         icon={collapsed ? <RightOutlined /> : <LeftOutlined />}
-                        onClick={() => setCollapsed(!collapsed)}
                         className="w-full flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100"
                     />
                 </div>
