@@ -22,6 +22,8 @@ import {
     CalendarOutlined,
     MenuFoldOutlined,
     MenuUnfoldOutlined,
+    LeftOutlined,
+    RightOutlined,
     SunOutlined,
     MoonOutlined,
     BellOutlined,
@@ -167,58 +169,63 @@ export const AdminLayout: React.FC = () => {
     }
 
     return (
-        <Layout className="min-h-screen w-full  bg-slate-100 dark:bg-slate-950">
+        <Layout className="min-h-screen w-full bg-slate-100 dark:bg-slate-950">
             <Sider
                 trigger={null}
                 collapsible
                 collapsed={collapsed}
                 width={240}
                 theme={isDarkMode ? "dark" : "light"}
-                className="border-r border-slate-200 dark:border-slate-800 shadow-xs z-20"
+                className="!fixed left-0 top-0 bottom-0 h-screen border-r border-slate-200 dark:border-slate-800 shadow-xs z-20 flex flex-col justify-between"
+                style={{ position: "fixed", left: 0, top: 0, bottom: 0, height: "100vh" }}
             >
-                <div className="h-16 flex items-center justify-between px-4 border-b border-slate-200 dark:border-slate-800">
-                    <div className="flex items-center gap-3 overflow-hidden">
-                        <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-md shrink-0">
-                            <HomeOutlined />
-                        </div>
-                        {!collapsed && (
-                            <div className="flex flex-col truncate">
-                                <span className="font-bold text-base text-slate-800 dark:text-slate-100 leading-tight">
-                                    QLKS Admin
-                                </span>
-                                <span className="text-[11px] text-slate-400 font-medium">
-                                    Hotel & Homestay Portal
-                                </span>
+                <div className="flex flex-col flex-1 overflow-hidden">
+                    <div className="h-16 shrink-0 flex items-center justify-between px-4 border-b border-slate-200 dark:border-slate-800">
+                        <div className="flex items-center gap-3 overflow-hidden">
+                            <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-md shrink-0">
+                                <HomeOutlined />
                             </div>
-                        )}
+                            {!collapsed && (
+                                <div className="flex flex-col truncate">
+                                    <span className="font-bold text-base text-slate-800 dark:text-slate-100 leading-tight">
+                                        QLKS Admin
+                                    </span>
+                                    <span className="text-[11px] text-slate-400 font-medium">
+                                        Hotel & Homestay Portal
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto py-3">
+                        <Menu
+                            theme={isDarkMode ? "dark" : "light"}
+                            mode="inline"
+                            selectedKeys={[currentPath]}
+                            items={menuItems}
+                            onClick={({ key }) => navigate(key)}
+                            className="border-none text-sm font-medium"
+                        />
                     </div>
                 </div>
 
-                <Menu
-                    theme={isDarkMode ? "dark" : "light"}
-                    mode="inline"
-                    selectedKeys={[currentPath]}
-                    items={menuItems}
-                    onClick={({ key }) => navigate(key)}
-                    className="py-3 border-none text-sm font-medium"
-                />
+                <div className="p-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-center shrink-0 bg-white dark:bg-slate-900">
+                    <Button
+                        type="text"
+                        icon={collapsed ? <RightOutlined /> : <LeftOutlined />}
+                        onClick={() => setCollapsed(!collapsed)}
+                        className="w-full flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100"
+                    />
+                </div>
             </Sider>
 
-            <Layout className="flex flex-col flex-1 min-h-screen w-full bg-slate-100 dark:bg-slate-950">
-                <Header className="sticky top-0 z-10 px-6 h-16 w-full flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs transition-colors">
+            <Layout
+                className="flex flex-col min-h-screen flex-1 min-w-0 bg-slate-100 dark:bg-slate-950 transition-all duration-200"
+                style={{ marginLeft: collapsed ? 80 : 240 }}
+            >
+                <Header className="h-16 shrink-0 px-6 w-full flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs transition-colors">
                     <div className="flex items-center gap-3">
-                        <Button
-                            type="text"
-                            icon={
-                                collapsed ? (
-                                    <MenuUnfoldOutlined />
-                                ) : (
-                                    <MenuFoldOutlined />
-                                )
-                            }
-                            onClick={() => setCollapsed(!collapsed)}
-                            className="text-base text-slate-600 dark:text-slate-300"
-                        />
                         <Breadcrumb
                             items={[
                                 {
@@ -307,19 +314,12 @@ export const AdminLayout: React.FC = () => {
                         </Dropdown>
                     </div>
                 </Header>
-                <div
-                    style={{
-                        minHeight: "calc(100vh - 140px)",
-                    }}
-                >
-                    <Content className="flex-1 w-full p-6 bg-[#f4f6f9] dark:bg-[#0b0f19]">
-                        <Outlet />
-                    </Content>
-                </div>
 
-                <Footer className="w-full text-center py-3 text-xs text-slate-400 dark:text-slate-500 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-                    QLKS Admin — Hệ Thống Quản Lý Khách Sạn & Homestay ©2026
-                </Footer>
+                <Content className="flex-1 w-full p-6 bg-[#f4f6f9] dark:bg-[#0b0f19]">
+                    <div className="min-h-full flex flex-col justify-between space-y-6">
+                        <Outlet />
+                    </div>
+                </Content>
             </Layout>
         </Layout>
     )

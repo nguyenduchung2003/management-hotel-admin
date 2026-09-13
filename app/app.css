@@ -3,141 +3,159 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-  :root {
-    --bg-primary: #f8fafc;
-    --bg-secondary: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #64748b;
-    --border-color: #e2e8f0;
-    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
-    --primary-color: #1677ff;
-  }
+    :root {
+        --bg-primary: #f4f6f9;
+        --bg-secondary: #ffffff;
+        --text-primary: #0f172a;
+        --text-secondary: #64748b;
+        --border-color: #e2e8f0;
+        --card-shadow:
+            0 4px 20px -2px rgba(0, 0, 0, 0.05),
+            0 2px 6px -1px rgba(0, 0, 0, 0.03);
+        --primary-color: #1677ff;
+    }
 
-  [data-theme='dark'], .dark {
-    --bg-primary: #0b0f19;
-    --bg-secondary: #141a28;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --border-color: #1e293b;
-    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
-    --primary-color: #1668dc;
-  }
+    [data-theme="dark"],
+    .dark {
+        --bg-primary: #0b0f19;
+        --bg-secondary: #141a28;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --border-color: #1e293b;
+        --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+        --primary-color: #1668dc;
+    }
 
-  html, body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-width: 100%;
-    min-height: 100vh;
-    overflow-x: auto;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+    html,
+    body {
+        font-family:
+            "Inter",
+            system-ui,
+            -apple-system,
+            sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: auto;
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+    }
+}
+
+/* Ant Design Sider Flex Fix */
+.ant-layout-sider-children {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+    width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.4);
-  border-radius: 9999px;
+    background: rgba(156, 163, 175, 0.4);
+    border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(156, 163, 175, 0.7);
+    background: rgba(156, 163, 175, 0.7);
 }
 
 /* Custom UI Utility Classes */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-[data-theme='dark'] .glass-panel,
+[data-theme="dark"] .glass-panel,
 .dark .glass-panel {
-  background: rgba(20, 26, 40, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(20, 26, 40, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .stat-gradient-blue {
-  background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%);
+    background: linear-gradient(135deg, #1677ff 0%, #0958d9 100%);
 }
 
 .stat-gradient-emerald {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
 
 .stat-gradient-amber {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
 }
 
 .stat-gradient-purple {
-  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
 }
 
 .card-hover-effect {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
 }
 
 .card-hover-effect:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 /* Mockup Pastel Card Classes */
 .card-pastel-blue {
-  background-color: #f0f7ff;
-  border: 1px solid #dbeafe !important;
+    background-color: #f0f7ff;
+    border: 1px solid #dbeafe !important;
 }
 
 .dark .card-pastel-blue,
-[data-theme='dark'] .card-pastel-blue {
-  background-color: #14243b;
-  border: 1px solid #1e3a8a !important;
+[data-theme="dark"] .card-pastel-blue {
+    background-color: #14243b;
+    border: 1px solid #1e3a8a !important;
 }
 
 .card-pastel-green {
-  background-color: #f4fbf7;
-  border: 1px solid #dcfce7 !important;
+    background-color: #f4fbf7;
+    border: 1px solid #dcfce7 !important;
 }
 
 .dark .card-pastel-green,
-[data-theme='dark'] .card-pastel-green {
-  background-color: #11291e;
-  border: 1px solid #14532d !important;
+[data-theme="dark"] .card-pastel-green {
+    background-color: #11291e;
+    border: 1px solid #14532d !important;
 }
 
 .card-pastel-purple {
-  background-color: #f8f6ff;
-  border: 1px solid #f3e8ff !important;
+    background-color: #f8f6ff;
+    border: 1px solid #f3e8ff !important;
 }
 
 .dark .card-pastel-purple,
-[data-theme='dark'] .card-pastel-purple {
-  background-color: #211836;
-  border: 1px solid #581c87 !important;
+[data-theme="dark"] .card-pastel-purple {
+    background-color: #211836;
+    border: 1px solid #581c87 !important;
 }
 
 .card-pastel-orange {
-  background-color: #fff9f5;
-  border: 1px solid #ffedd5 !important;
+    background-color: #fff9f5;
+    border: 1px solid #ffedd5 !important;
 }
 
 .dark .card-pastel-orange,
-[data-theme='dark'] .card-pastel-orange {
-  background-color: #2d1d15;
-  border: 1px solid #7c2d12 !important;
+[data-theme="dark"] .card-pastel-orange {
+    background-color: #2d1d15;
+    border: 1px solid #7c2d12 !important;
 }
-
-
