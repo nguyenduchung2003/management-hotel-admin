@@ -125,20 +125,20 @@ export default function DashboardView() {
           <Card className="card-pastel-blue rounded-2xl shadow-2xs p-1">
             <div className="flex items-center justify-between">
               <div>
-                <Text className="text-xs font-medium text-slate-500">
+                <Text className="text-xs font-medium text-slate-500 dark:text-slate-300">
                   Tổng Doanh Thu
                 </Text>
-                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-50">
+                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
                   {formatCurrency(stats.totalRevenue)}
                 </div>
                 <div className="flex items-center gap-1 text-[11px] mt-2">
-                  <span className="inline-flex items-center gap-0.5 text-emerald-600 bg-emerald-100/80 px-1.5 py-0.5 rounded font-semibold">
+                  <span className="inline-flex items-center gap-0.5 text-emerald-600 dark:text-emerald-400 bg-emerald-100/80 dark:bg-emerald-950/80 px-1.5 py-0.5 rounded font-semibold">
                     <ArrowUpOutlined className="text-[10px]" /> +16.4%
                   </span>
                   <span className="text-slate-400 font-normal">so với tháng trước</span>
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-blue-500/15 flex items-center justify-center text-blue-600 text-lg shadow-2xs">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/15 flex items-center justify-center text-blue-600 dark:text-blue-400 text-lg shadow-2xs">
                 <DollarOutlined />
               </div>
             </div>
@@ -149,20 +149,20 @@ export default function DashboardView() {
           <Card className="card-pastel-green rounded-2xl shadow-2xs p-1">
             <div className="flex items-center justify-between">
               <div>
-                <Text className="text-xs font-medium text-slate-500">
+                <Text className="text-xs font-medium text-slate-500 dark:text-slate-300">
                   Tổng Đặt Phòng
                 </Text>
-                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-50">
+                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
                   {INITIAL_BOOKINGS.length}
                 </div>
                 <div className="flex items-center gap-1 text-[11px] mt-2">
-                  <span className="inline-flex items-center gap-0.5 text-emerald-600 bg-emerald-100/80 px-1.5 py-0.5 rounded font-semibold">
+                  <span className="inline-flex items-center gap-0.5 text-emerald-600 dark:text-emerald-400 bg-emerald-100/80 dark:bg-emerald-950/80 px-1.5 py-0.5 rounded font-semibold">
                     <ArrowUpOutlined className="text-[10px]" /> +12.5%
                   </span>
                   <span className="text-slate-400 font-normal">so với tháng trước</span>
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-600 text-lg shadow-2xs">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-lg shadow-2xs">
                 <CalendarOutlined />
               </div>
             </div>
@@ -173,20 +173,20 @@ export default function DashboardView() {
           <Card className="card-pastel-purple rounded-2xl shadow-2xs p-1">
             <div className="flex items-center justify-between">
               <div>
-                <Text className="text-xs font-medium text-slate-500">
+                <Text className="text-xs font-medium text-slate-500 dark:text-slate-300">
                   Khách Hàng Mới
                 </Text>
-                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-50">
+                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
                   1.280
                 </div>
                 <div className="flex items-center gap-1 text-[11px] mt-2">
-                  <span className="inline-flex items-center gap-0.5 text-emerald-600 bg-emerald-100/80 px-1.5 py-0.5 rounded font-semibold">
+                  <span className="inline-flex items-center gap-0.5 text-emerald-600 dark:text-emerald-400 bg-emerald-100/80 dark:bg-emerald-950/80 px-1.5 py-0.5 rounded font-semibold">
                     <ArrowUpOutlined className="text-[10px]" /> +8.9%
                   </span>
                   <span className="text-slate-400 font-normal">so với tháng trước</span>
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center text-purple-600 text-lg shadow-2xs">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center text-purple-600 dark:text-purple-400 text-lg shadow-2xs">
                 <UserAddOutlined />
               </div>
             </div>
@@ -197,20 +197,20 @@ export default function DashboardView() {
           <Card className="card-pastel-orange rounded-2xl shadow-2xs p-1">
             <div className="flex items-center justify-between">
               <div>
-                <Text className="text-xs font-medium text-slate-500">
+                <Text className="text-xs font-medium text-slate-500 dark:text-slate-300">
                   Tỷ Lệ Lấp Đầy Phòng
                 </Text>
-                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-50">
+                <div className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
                   {stats.occupancyRate.toFixed(1)}%
                 </div>
                 <div className="flex items-center gap-1 text-[11px] mt-2">
-                  <span className="inline-flex items-center gap-0.5 text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded font-semibold">
+                  <span className="inline-flex items-center gap-0.5 text-slate-500 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-semibold">
                     {stats.totalRooms - stats.availableRooms}/{stats.totalRooms} phòng
                   </span>
                   <span className="text-slate-400 font-normal">đang được sử dụng</span>
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-orange-500/15 flex items-center justify-center text-orange-600 text-lg shadow-2xs">
+              <div className="w-10 h-10 rounded-xl bg-orange-500/15 flex items-center justify-center text-orange-600 dark:text-orange-400 text-lg shadow-2xs">
                 <PercentageOutlined />
               </div>
             </div>
@@ -268,7 +268,7 @@ export default function DashboardView() {
               </svg>
 
               {/* X-Axis Ticks */}
-              <div className="flex justify-between px-2 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-medium text-slate-500">
+              <div className="flex justify-between px-2 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs font-medium text-slate-500 dark:text-slate-400">
                 <span>T1</span>
                 <span>T2</span>
                 <span>T3</span>
@@ -330,7 +330,7 @@ export default function DashboardView() {
                   <FireOutlined className="text-amber-500" />
                   <span>Top Cơ sở Lưu trú Được Đánh giá Cao</span>
                 </div>
-                <Link to="/properties" className="text-xs text-blue-600 font-medium hover:underline">
+                <Link to="/properties" className="text-xs text-blue-600 dark:text-blue-400 font-medium hover:underline">
                   Xem tất cả
                 </Link>
               </div>
@@ -344,6 +344,7 @@ export default function DashboardView() {
               pagination={false}
               size="small"
               className="text-xs"
+              scroll={{ x: 'max-content' }}
             />
           </Card>
         </Col>

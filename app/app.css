@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     --bg-primary: #f8fafc;
@@ -11,7 +13,7 @@
     --primary-color: #1677ff;
   }
 
-  [data-theme='dark'] {
+  [data-theme='dark'], .dark {
     --bg-primary: #0b0f19;
     --bg-secondary: #141a28;
     --text-primary: #f8fafc;
@@ -21,12 +23,16 @@
     --primary-color: #1668dc;
   }
 
-  body {
+  html, body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100vh;
+    overflow-x: auto;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
@@ -58,7 +64,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-[data-theme='dark'] .glass-panel {
+[data-theme='dark'] .glass-panel,
+.dark .glass-panel {
   background: rgba(20, 26, 40, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -94,9 +101,21 @@
   border: 1px solid #dbeafe !important;
 }
 
+.dark .card-pastel-blue,
+[data-theme='dark'] .card-pastel-blue {
+  background-color: #14243b;
+  border: 1px solid #1e3a8a !important;
+}
+
 .card-pastel-green {
   background-color: #f4fbf7;
   border: 1px solid #dcfce7 !important;
+}
+
+.dark .card-pastel-green,
+[data-theme='dark'] .card-pastel-green {
+  background-color: #11291e;
+  border: 1px solid #14532d !important;
 }
 
 .card-pastel-purple {
@@ -104,8 +123,21 @@
   border: 1px solid #f3e8ff !important;
 }
 
+.dark .card-pastel-purple,
+[data-theme='dark'] .card-pastel-purple {
+  background-color: #211836;
+  border: 1px solid #581c87 !important;
+}
+
 .card-pastel-orange {
   background-color: #fff9f5;
   border: 1px solid #ffedd5 !important;
 }
+
+.dark .card-pastel-orange,
+[data-theme='dark'] .card-pastel-orange {
+  background-color: #2d1d15;
+  border: 1px solid #7c2d12 !important;
+}
+
 

@@ -253,12 +253,12 @@ export default function BookingManagementView() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-slate-200/60 dark:border-slate-800">
         <div>
-          <Title level={4} style={{ margin: 0 }}>
+          <Title level={4} style={{ margin: 0 }} className="!text-slate-900 dark:!text-slate-100">
             📅 Quản Lý Đặt Phòng
           </Title>
-          <Text type="secondary" className="text-xs">
+          <Text type="secondary" className="text-xs dark:text-slate-400">
             Theo dõi, xử lý quy trình đặt phòng, check-in, hoàn tất và hủy đơn của khách hàng.
           </Text>
         </div>
@@ -276,7 +276,7 @@ export default function BookingManagementView() {
       </div>
 
       {/* Tabs & Search Card */}
-      <Card className="border-none shadow-sm rounded-xl">
+      <Card className="border-none shadow-sm rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-2">
           <Tabs
             activeKey={activeTab}
@@ -303,7 +303,7 @@ export default function BookingManagementView() {
             ]}
           />
           <Input
-            prefix={<SearchOutlined className="text-gray-400" />}
+            prefix={<SearchOutlined className="text-gray-400 dark:text-slate-500" />}
             placeholder="Tìm theo mã đơn, tên khách, SĐT..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
@@ -317,6 +317,7 @@ export default function BookingManagementView() {
           dataSource={filteredBookings}
           rowKey="code"
           pagination={{ pageSize: 7 }}
+          scroll={{ x: 'max-content' }}
         />
       </Card>
 

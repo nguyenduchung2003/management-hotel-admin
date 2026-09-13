@@ -54,6 +54,10 @@ export const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
             colorBgContainer: isDarkMode ? '#141a28' : '#ffffff',
             colorBgElevated: isDarkMode ? '#1f293d' : '#ffffff',
             colorBgLayout: isDarkMode ? '#0b0f19' : '#f8fafc',
+            colorText: isDarkMode ? '#f8fafc' : '#0f172a',
+            colorTextSecondary: isDarkMode ? '#94a3b8' : '#64748b',
+            colorBorder: isDarkMode ? '#1e293b' : '#e2e8f0',
+            colorBorderSecondary: isDarkMode ? '#334155' : '#f1f5f9',
           },
           components: {
             Card: {
@@ -63,6 +67,17 @@ export const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
             },
             Table: {
               headerBg: isDarkMode ? '#1b2436' : '#f1f5f9',
+              headerColor: isDarkMode ? '#f8fafc' : '#0f172a',
+              rowHoverBg: isDarkMode ? '#1e293d' : '#f8fafc',
+            },
+            Menu: {
+              darkItemBg: '#0f172a',
+              darkSubMenuItemBg: '#0f172a',
+            },
+            Layout: {
+              headerBg: isDarkMode ? '#141a28' : '#ffffff',
+              siderBg: isDarkMode ? '#0f172a' : '#ffffff',
+              bodyBg: isDarkMode ? '#0b0f19' : '#f4f6f9',
             },
           },
         }}

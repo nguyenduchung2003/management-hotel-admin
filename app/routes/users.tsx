@@ -208,12 +208,12 @@ export default function UserManagementView() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-xs border border-slate-200/60 dark:border-slate-800">
         <div>
-          <Title level={4} style={{ margin: 0 }}>
+          <Title level={4} style={{ margin: 0 }} className="!text-slate-900 dark:!text-slate-100">
             👥 Người Dùng & Phân Quyền
           </Title>
-          <Text type="secondary" className="text-xs">
+          <Text type="secondary" className="text-xs dark:text-slate-400">
             Quản lý tài khoản quản trị viên, nhân viên lễ tân, khách hàng và ma trận phân quyền hệ thống.
           </Text>
         </div>
@@ -232,7 +232,7 @@ export default function UserManagementView() {
         </Button>
       </div>
 
-      <Card className="border-none shadow-sm rounded-xl">
+      <Card className="border-none shadow-sm rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800">
         <Tabs
           items={[
             {
@@ -243,7 +243,7 @@ export default function UserManagementView() {
                   <Row gutter={[16, 16]}>
                     <Col xs={24} sm={12}>
                       <Input
-                        prefix={<SearchOutlined className="text-gray-400" />}
+                        prefix={<SearchOutlined className="text-gray-400 dark:text-slate-500" />}
                         placeholder="Tìm kiếm tên, email, SĐT..."
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}
@@ -269,6 +269,7 @@ export default function UserManagementView() {
                     dataSource={filteredUsers}
                     rowKey="id"
                     pagination={{ pageSize: 6 }}
+                    scroll={{ x: 'max-content' }}
                   />
                 </div>
               ),
@@ -282,6 +283,7 @@ export default function UserManagementView() {
                     dataSource={permissionsMatrix}
                     rowKey="module"
                     pagination={false}
+                    scroll={{ x: 'max-content' }}
                     columns={[
                       {
                         title: 'Chức năng / Module',
