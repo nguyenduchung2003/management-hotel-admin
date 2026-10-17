@@ -1,0 +1,31 @@
+/* antd (CSS-in-JS) được bọc trong @layer antd: thắng preflight nhưng thua utility của Tailwind. */
+@layer theme, base, antd, components, utilities;
+
+@import "tailwindcss";
+
+/* Design tokens — đồng bộ với site khách (fe) */
+@theme {
+	--color-gold: #bf882e;
+	--color-gold-dark: #9e7026;
+	--color-forest: #0f332c;
+	--color-ink: #222222;
+	--color-body: #333333;
+	--color-muted: #8c8c8c;
+	--color-line: #eaecef;
+	--color-canvas: #f5f6f8;
+}
+
+@layer base {
+	html,
+	body,
+	#root {
+		min-height: 100%;
+	}
+
+	body {
+		background: var(--color-canvas);
+		color: var(--color-body);
+		font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+		-webkit-font-smoothing: antialiased;
+	}
+}
